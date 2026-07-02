@@ -10,7 +10,7 @@ function renderSpecials(){
 
     specials.forEach(function (item){
         const card = document.createElement("article");
-        card.classList.add = ("flavour-card");
+        card.classList.add("flavour-card");
 
         const name = document.createElement("h4");
         name.textContent = item.name;
@@ -25,3 +25,28 @@ function renderSpecials(){
     });
 }
 renderSpecials();
+
+const wishlistInput = document.getElementById("wishlist-input");
+const wishlistAddButton = document.getElementById("wishlist-add-button");
+const wishlistItems = document.getElementById("wishlist-items");
+
+function addWishlistItem() {
+    const flavor = wishlistInput.value.trim();
+    if (flavor === "") {
+        return;
+    }
+        const li = document.createElement("li");
+        li.textContent = flavor;
+        
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", function () {
+            li.remove();
+        });
+        li.appendChild(removeButton);
+        wishlistItems.appendChild(li);
+        wishlistInput.value = "";
+}
+    
+wishlistAddButton.addEventListener("click", addWishlistItem);
