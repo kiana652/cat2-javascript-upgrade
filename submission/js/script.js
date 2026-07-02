@@ -69,6 +69,14 @@ orderForm.addEventListener("submit", function (event) {
 
     orderFeedback.textContent = "Thank you, " + name + "! Your order for " + quantity + " " + flavor + "(s) has been placed.";
     orderFeedback.style.color = "green";
-
+    localStorage.setItem("customerName", name);
     orderForm.reset();
 });
+const nameInput = document.getElementById("name");
+function loadsavedName() {
+    const savedName = localStorage.getItem("customerName");
+    if (savedName !== null) {
+        nameInput.value = savedName;
+    }
+}
+loadsavedName();
