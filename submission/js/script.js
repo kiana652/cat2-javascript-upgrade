@@ -50,3 +50,25 @@ function addWishlistItem() {
 }
     
 wishlistAddButton.addEventListener("click", addWishlistItem);
+
+const orderForm = document.getElementById("orderForm");
+const orderFeedback = document.getElementById("order-feedback");
+
+orderForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const flavor = document.getElementById("flavor").value;
+    const quantity = document.getElementById("quantity").value;
+
+    if (name === ""|| flavor === "" || quantity === "") {
+        orderFeedback.textContent = "Please fill in all fields.";
+        orderFeedback.style.color = "red";
+        return;
+    }
+
+    orderFeedback.textContent = "Thank you, " + name + "! Your order for " + quantity + " " + flavor + "(s) has been placed.";
+    orderFeedback.style.color = "green";
+
+    orderForm.reset();
+});
