@@ -80,3 +80,12 @@ function loadsavedName() {
     }
 }
 loadsavedName();
+
+const bannerImg = document.getElementById("banner-img");
+const bannerCaption = document.getElementById("banner-caption");
+
+function toggleBannerCaption() {
+    bannerCaption.classList.toggle("revealed");
+}
+
+bannerImg.addEventListener("click", toggleBannerCaption);

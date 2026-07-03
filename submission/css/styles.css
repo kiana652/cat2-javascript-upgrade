@@ -221,3 +221,16 @@ footer{
 html{
         scroll-behavior: smooth;
 }
+.hidden-caption{
+    display:none;
+    font-size: 1.2rem;
+    color:#ff7a59;
+    font-weight:600;
+    margin: 10px 0;
+}
+.hidden-caption.revealed{
+    display:block;
+}
+#banner-img{
+    cursor: pointer;
+}
