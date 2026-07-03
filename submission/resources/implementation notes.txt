@@ -1,0 +1,22 @@
+LOOP-RENDERED DYNAMIC CONTENT
+I added a "Today's Specials" section. Special items are stored as an array of objects each with a name and price in my script.js, and used the forEach() andcreateElement()/appendChild(),
+instead of just doing it in the html.
+
+DYNAMIC ADD/REMOVE ELEMENTS:
+I added a "Create your order" wishlist under the specials section in my html.
+A flavor that a customer wants is placed into an input box and click "Add to wishlist" to add it to a list
+I used the createElement() and appendChild(). Each item has its own "remove" button that deletes just that item using remove().
+
+FORM HANDLING WITH VALIDATION FEEDBACK
+I added an order form and it has (name,flavor dropdown,quantity) using event.preventDefault() to stop the page from reloading on submit.
+Each field is checked manually in javascript, if any field is found empty an error message is displayed in red.
+using textContent. If all fields are filled, a green confirmation message is shown instead.
+
+PERSISTENT STATE WITH LOCALSTORAGE
+The customer's name from the order form is saved to localStorage when they submit the form.
+When I reload the page, the name field is automatically filled back in using the saved value so it survives a page refresh. 
+I entered my name Natalia on the order form and when i reload the page Natalia comes automatically prefilled.
+
+CLICK TO REVEAL BANNER
+Clicking the banner image on the homepage it toggles a hidden caption
+("Welcome to Sweet Mama's) using classlist.toggle()
